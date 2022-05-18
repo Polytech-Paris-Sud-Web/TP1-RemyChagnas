@@ -22,6 +22,11 @@ export class ArticlesComponent implements OnInit {
     }});
   }
 
+  /**
+   * Delete specific article
+   * 
+   * @param article 
+   */
   deleteArticle(article : Article) {
 
     const id = article.id;
@@ -33,6 +38,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   /**
+   * Get articles
    * 
    * @returns filtered articles
    */
@@ -42,6 +48,7 @@ export class ArticlesComponent implements OnInit {
 
   /**
    * Search article from title and content
+   * 
    * @param event 
    */
   public searchArticles(event: any) {

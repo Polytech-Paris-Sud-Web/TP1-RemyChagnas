@@ -20,7 +20,12 @@ export class ArticlesHomeComponent implements OnInit {
     }});
   }
 
-  deleteBDD(article : Article) {
+  /**
+   * Delete specific article
+   * 
+   * @param article 
+   */
+  deleteArticle(article : Article) {
 
     const id = article.id;
 
@@ -29,7 +34,12 @@ export class ArticlesHomeComponent implements OnInit {
     }})});
   }
 
+  /**
+   * Request articles
+   * 
+   * @returns articles from BDD
+   */
   getArticles(): Article[] | undefined {
-    return this.articlesBDD?.sort(( a: Article, b: Article ) => b.id - a.id).slice(0, 10);
+    return this.articlesBDD?.sort(( a: Article, b: Article ) => new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime()).slice(0, 10);
   }
 }

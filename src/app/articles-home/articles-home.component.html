@@ -6,7 +6,7 @@
 
     <div *ngFor="let article of this.getArticles()">
         <app-article 
-        (deletedArticle)="deleteBDD($event)"
+        (deletedArticle)="deleteArticle($event)"
         [article]="article">
         </app-article>
     </div>
